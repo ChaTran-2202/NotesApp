@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardNote"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_arrow_back" />
+
+            <ImageView
+                android:id="@+id/imgPin"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_pin" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Note Title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note content"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <ImageButton
+                android:id="@+id/btnCancel"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_cancel" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnAddContent"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                android:id="@+id/txtAddContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add new content"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
