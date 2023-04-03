@@ -1,10 +1,10 @@
-package com.example.notesapp.Database;
+package com.example.notesapp.database;
 
 import androidx.room.*;
 
 import java.util.*;
 
-import com.example.notesapp.Models.Note;
+import com.example.notesapp.models.Note;
 
 @Dao
 public interface NoteDao {
@@ -14,7 +14,7 @@ public interface NoteDao {
 
     // Return an object
     @Query("SELECT * FROM notes WHERE title LIKE :title")
-    public Note[] findNote(int tilte);
+    public Note[] findNote(int title);
 
     // Use OnConflictStrategy.REPLACE to replace the existing rows with the new rows
     @Insert(onConflict = OnConflictStrategy.REPLACE)

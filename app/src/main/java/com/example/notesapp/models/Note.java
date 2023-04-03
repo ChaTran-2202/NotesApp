@@ -1,4 +1,4 @@
-package com.example.notesapp.Models;
+package com.example.notesapp.models;
 
 import androidx.room.*;
 
