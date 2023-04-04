@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".activities.CreateNoteActivity">
 
     <ScrollView
@@ -32,7 +31,7 @@
                 android:src="@drawable/ic_arrow_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
+                app:tint="@color/grey_26" />
 
             <ImageView
                 android:id="@+id/pin"
@@ -45,7 +44,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/imgBack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imgBack"
-                app:tint="@color/white" />
+                app:tint="@color/grey_26" />
 
             <EditText
                 android:id="@+id/txtTitle"
@@ -60,13 +59,22 @@
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
+                app:layout_constraintStart_toStartOf="@+id/txtTitle"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle"/>
 
             <EditText
                 android:id="@+id/txtContent"
@@ -83,17 +91,31 @@
                 android:includeFontPadding="false"
                 android:inputType="textMultiLine"
                 android:minHeight="@dimen/_70sdp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="@dimen/_13sdp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_26"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/_15sdp"
+        android:layout_gravity="bottom"
+        app:layout_anchorGravity="bottom">
 
+        <ImageView
+            android:id="@+id/imgSave"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_save"
+            app:tint="@color/white" />
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

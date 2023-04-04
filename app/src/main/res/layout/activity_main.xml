@@ -74,7 +74,17 @@
             android:layout_height="@dimen/_23sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_add_note"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/addLink"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_link"
+            app:tint="@color/white" />
+
         <ImageView
             android:id="@+id/addImage"
             android:layout_width="@dimen/_23sdp"
@@ -82,9 +92,9 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
     </LinearLayout>
-    
+
     <ImageView
         android:id="@+id/imgAdd"
         android:layout_width="@dimen/_50sdp"
@@ -94,8 +104,8 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/quickActionLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/quickActionLayout"/>
+        app:layout_constraintTop_toTopOf="@+id/quickActionLayout"
+        app:tint="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

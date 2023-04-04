@@ -9,12 +9,8 @@ import com.example.notesapp.models.Note;
 @Dao
 public interface NoteDao {
     // Return all objects in the database
-    @Query("SELECT * FROM notes")
+    @Query("SELECT * FROM notes ORDER BY noteID DESC")
     List<Note> getAllNote();
-
-    // Return an object
-    @Query("SELECT * FROM notes WHERE title LIKE :title")
-    public Note[] findNote(int title);
 
     // Use OnConflictStrategy.REPLACE to replace the existing rows with the new rows
     @Insert(onConflict = OnConflictStrategy.REPLACE)

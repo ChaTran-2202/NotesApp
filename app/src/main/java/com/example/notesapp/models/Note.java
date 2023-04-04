@@ -1,17 +1,26 @@
 package com.example.notesapp.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.*;
 
+import java.io.Serializable;
+
 @Entity(tableName = "notes")
-public class Note {
+public class Note implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    int noteID = 0;
+    private int noteID = 0;
     @ColumnInfo(name = "title")
-    String noteTitle;
+    private String noteTitle;
     @ColumnInfo(name = "content")
-    String noteContent;
+    private String noteContent;
     @ColumnInfo(name = "date")
-    String noteDate;
+    private String noteDate;
+    @ColumnInfo(name = "picture")
+    private String imagePath;
+    @ColumnInfo(name = "color")
+    private String color;
+    @ColumnInfo(name = "linkURL")
+    private String linkURL;
 
     public int getNoteID() {
         return noteID;
@@ -43,5 +52,35 @@ public class Note {
 
     public void setNoteDate(String noteDate) {
         this.noteDate = noteDate;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getLinkURL() {
+        return linkURL;
+    }
+
+    public void setLinkURL(String linkURL) {
+        this.linkURL = linkURL;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return noteTitle + ": " + noteDate;
     }
 }
