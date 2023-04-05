@@ -1,8 +1,11 @@
 package com.example.notesapp.adapters;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,16 +49,23 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
     // Creating view holder for NotesAdapter
     static class NoteViewHolder extends RecyclerView.ViewHolder{
         TextView title, date;
-
+        LinearLayout notelayout;
         NoteViewHolder(@NonNull View itemView){
             super(itemView);
             title = itemView.findViewById(R.id.title);
             date = itemView.findViewById(R.id.date);
+            notelayout = itemView.findViewById(R.id.noteLayout);
         }
 
         void setNote(Note note){
             title.setText(note.getNoteTitle());
             date.setText(note.getNoteDate());
+            GradientDrawable gradientDrawable = (GradientDrawable) notelayout.getBackground();
+            if (note.getColor() != null){
+                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+            }else {
+                gradientDrawable.setColor(Color.parseColor("#FF000000"));
+            }
         }
     }
 }
