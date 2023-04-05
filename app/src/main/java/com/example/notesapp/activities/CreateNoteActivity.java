@@ -38,7 +38,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
         inputTitle = findViewById(R.id.txtTitle);
-        inputContent = findViewById(R.id.txtContent);
+        inputContent = findViewById(R.id.inputNote);
         dateTime = findViewById(R.id.txtDate);
 
         dateTime.setText(
@@ -46,7 +46,7 @@ public class CreateNoteActivity extends AppCompatActivity {
                         .format(new Date())
         );
 
-        ImageView imgSave = findViewById(R.id.imgSave);
+        ImageView imgSave = findViewById(R.id.imgPin);
         imgSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
