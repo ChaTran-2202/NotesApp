@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/menuLayout"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_menu"
-    app:behavior_peekHeight="@dimen/_40sdp"
+    android:orientation="vertical"
+    app:behavior_peekHeight="@dimen/_53sdp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <View
-        android:id="@+id/more"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"/>
+    <ImageView
+        android:id="@+id/imgExtension"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_add_box"
+        app:tint="@color/white" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:gravity="start"
         android:text="@string/color"
         android:textColor="@color/white"
-        android:textSize="@dimen/_13sdp"/>
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/noteColorLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:gravity="center_vertical">
 
         <FrameLayout
             android:layout_width="0dp"
@@ -40,7 +50,8 @@
                 android:id="@+id/vwColor0"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_0"/>
+                android:background="@drawable/bg_color_0" />
+
             <ImageView
                 android:id="@+id/imgColor0"
                 android:layout_width="@dimen/_35sdp"
@@ -48,7 +59,7 @@
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
                 android:src="@drawable/ic_done"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -60,14 +71,15 @@
                 android:id="@+id/vwColor1"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_1"/>
+                android:background="@drawable/bg_color_1" />
+
             <ImageView
                 android:id="@+id/imgColor1"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -79,14 +91,15 @@
                 android:id="@+id/vwColor2"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_2"/>
+                android:background="@drawable/bg_color_2" />
+
             <ImageView
                 android:id="@+id/imgColor2"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -98,14 +111,15 @@
                 android:id="@+id/vwColor3"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_3"/>
+                android:background="@drawable/bg_color_3" />
+
             <ImageView
                 android:id="@+id/imgColor3"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -117,14 +131,15 @@
                 android:id="@+id/vwColor4"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_4"/>
+                android:background="@drawable/bg_color_4" />
+
             <ImageView
                 android:id="@+id/imgColor4"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -136,14 +151,15 @@
                 android:id="@+id/vwColor5"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_5"/>
+                android:background="@drawable/bg_color_5" />
+
             <ImageView
                 android:id="@+id/imgColor5"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
 
         <FrameLayout
@@ -155,14 +171,96 @@
                 android:id="@+id/vwColor6"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
-                android:background="@drawable/bg_color_6"/>
+                android:background="@drawable/bg_color_6" />
+
             <ImageView
                 android:id="@+id/imgColor6"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_8sdp"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
         </FrameLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/addImageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_image"
+            app:tint="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:text="@string/image"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addLinkLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        tools:ignore="UseCompoundDrawables">
+        
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_link"
+            app:tint="@color/white"/>
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:text="@string/link"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deleteNote"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:text="@string/delete_note"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"/>
     </LinearLayout>
 </LinearLayout>

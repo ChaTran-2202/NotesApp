@@ -19,4 +19,6 @@
     <color name="grey_26">#FF424242</color>
     <color name="charcoal">#FF222021</color>
     <color name="black">#FF000000</color>
+
+    <color name="red">#FFD30000</color>
 </resources>

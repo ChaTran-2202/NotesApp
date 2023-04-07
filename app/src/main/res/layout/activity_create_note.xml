@@ -27,7 +27,7 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_6sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginEnd="318dp"
+                android:layout_marginEnd="@dimen/_6sdp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
                 android:id="@+id/imgSave"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_4sdp"
                 android:src="@drawable/ic_done"
@@ -51,9 +51,9 @@
                 android:id="@+id/txtTitle"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_35sdp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
                 android:hint="@string/title"
                 android:imeOptions="actionDone"
@@ -70,6 +70,7 @@
                 android:id="@+id/txtDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:includeFontPadding="false"
                 android:textSize="@dimen/_10sdp"
                 android:textStyle="italic"
@@ -77,13 +78,70 @@
                 app:layout_constraintStart_toStartOf="@+id/txtTitle"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
+            <ImageView
+                android:id="@+id/imgPicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12sdp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/txtDate"/>
+
+            <ImageView
+                android:id="@+id/imgRemovePicture"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                app:tint="@color/red"
+                app:layout_constraintTop_toTopOf="@id/imgPicture"
+                app:layout_constraintEnd_toEndOf="@id/imgPicture"/>
+
+            <LinearLayout
+                android:id="@+id/URLlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/imgPicture"
+                tools:ignore="UseCompoundDrawables">
+
+                <TextView
+                    android:id="@+id/URL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoLink="web"
+                    android:textStyle="italic"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/_13sdp"/>
+                
+                <ImageView
+                    android:id="@+id/imgRemoveURL"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_cancel"
+                    app:tint="@color/red"/>
+
+            </LinearLayout>
+
             <EditText
                 android:id="@+id/txtContent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:background="@null"
                 android:gravity="top"
@@ -97,8 +155,34 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/URLlayout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-    <include layout="@layout/layout_menu"/>
+
+    <include layout="@layout/layout_menu" />
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/menuLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/bg_menu"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        android:paddingTop="@dimen/_15sdp"-->
+    <!--        android:paddingBottom="@dimen/_15sdp">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imgExtensions"-->
+    <!--            android:layout_width="@dimen/_23sdp"-->
+    <!--            android:layout_height="@dimen/_23sdp"-->
+    <!--            android:layout_marginStart="@dimen/_6sdp"-->
+    <!--            android:src="@drawable/ic_add_box"-->
+    <!--            app:tint="@color/white" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imgColor"-->
+    <!--            android:layout_width="@dimen/_23sdp"-->
+    <!--            android:layout_height="@dimen/_23sdp"-->
+    <!--            android:layout_marginStart="@dimen/_15sdp"-->
+    <!--            android:src="@drawable/ic_color_lens"-->
+    <!--            app:tint="@color/white" />-->
+    <!--    </LinearLayout>-->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
