@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/linkLayout"
+    android:id="@+id/layoutAddUrl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -9,7 +9,7 @@
     android:background="@drawable/bg_note">
 
     <ImageView
-        android:id="@+id/imgCancel"
+        android:id="@+id/btnCloseUrl"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_marginTop="@dimen/_10sdp"
@@ -21,7 +21,7 @@
         app:tint="@color/white" />
 
     <ImageView
-        android:id="@+id/imgAddURL"
+        android:id="@+id/iconAddURL"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_marginStart="@dimen/_8sdp"
@@ -29,7 +29,7 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_link"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgCancel"
+        app:layout_constraintTop_toBottomOf="@id/btnCloseUrl"
         app:tint="@color/white" />
 
     <TextView
@@ -43,19 +43,20 @@
         android:textColor="@color/white"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAddURL"
+        app:layout_constraintBottom_toBottomOf="@+id/iconAddURL"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgAddURL"
-        app:layout_constraintTop_toTopOf="@id/imgAddURL" />
+        app:layout_constraintStart_toEndOf="@id/iconAddURL"
+        app:layout_constraintTop_toTopOf="@id/iconAddURL" />
 
     <EditText
-        android:id="@+id/txtURL"
+        android:id="@+id/inputUrl"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:background="@null"
+        android:fontFamily="@font/averia_serif_libre_regular"
         android:gravity="center_vertical"
         android:hint="@string/enter_link"
         android:imeOptions="actionDone"
@@ -67,10 +68,10 @@
         android:textColor="@color/white"
         android:textColorHint="@color/grey_58"
         android:textSize="@dimen/_13sdp"
-        app:layout_constraintTop_toBottomOf="@id/imgAddURL" />
+        app:layout_constraintTop_toBottomOf="@id/iconAddURL" />
 
     <TextView
-        android:id="@+id/addURL"
+        android:id="@+id/btnConfirmUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_8sdp"
@@ -83,6 +84,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtURL" />
+        app:layout_constraintTop_toBottomOf="@id/inputUrl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

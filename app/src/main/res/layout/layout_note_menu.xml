@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/menuLayout"
+    android:id="@+id/layoutNoteMenu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_menu"
@@ -10,31 +10,54 @@
     app:behavior_peekHeight="@dimen/_53sdp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <ImageView
-        android:id="@+id/imgExtension"
-        android:layout_width="@dimen/_35sdp"
+    <LinearLayout
+        android:id="@+id/extension"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_13sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:contentDescription="@string/app_name"
-        android:layout_gravity="end"
-        android:src="@drawable/ic_add_box"
-        app:tint="@color/white" />
+        android:layout_marginEnd="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/btnAction"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_add_box"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/btnColorExtension"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_color_lens"
+            app:tint="@color/white" />
+    </LinearLayout>
 
     <TextView
+        android:id="@+id/vwName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/averia_serif_libre_bold"
         android:gravity="start"
         android:text="@string/color"
         android:textColor="@color/white"
         android:textSize="@dimen/_13sdp"
-        android:fontFamily="@font/averia_serif_libre_bold" />
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/noteColorLayout"
+        android:id="@+id/colorExtension"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
@@ -53,7 +76,7 @@
                 android:background="@drawable/bg_color_0" />
 
             <ImageView
-                android:id="@+id/imgColor0"
+                android:id="@+id/btnColor0"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -74,7 +97,7 @@
                 android:background="@drawable/bg_color_1" />
 
             <ImageView
-                android:id="@+id/imgColor1"
+                android:id="@+id/btnColor1"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -94,7 +117,7 @@
                 android:background="@drawable/bg_color_2" />
 
             <ImageView
-                android:id="@+id/imgColor2"
+                android:id="@+id/btnColor2"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -114,7 +137,7 @@
                 android:background="@drawable/bg_color_3" />
 
             <ImageView
-                android:id="@+id/imgColor3"
+                android:id="@+id/btnColor3"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -134,7 +157,7 @@
                 android:background="@drawable/bg_color_4" />
 
             <ImageView
-                android:id="@+id/imgColor4"
+                android:id="@+id/btnColor4"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -154,7 +177,7 @@
                 android:background="@drawable/bg_color_5" />
 
             <ImageView
-                android:id="@+id/imgColor5"
+                android:id="@+id/btnColor5"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -174,7 +197,7 @@
                 android:background="@drawable/bg_color_6" />
 
             <ImageView
-                android:id="@+id/imgColor6"
+                android:id="@+id/btnColor6"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="@dimen/_35sdp"
                 android:contentDescription="@string/app_name"
@@ -182,9 +205,9 @@
                 app:tint="@color/white" />
         </FrameLayout>
     </LinearLayout>
-    
+
     <LinearLayout
-        android:id="@+id/addImageLayout"
+        android:id="@+id/btnAddImageNote"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_margin="@dimen/_10sdp"
@@ -197,21 +220,21 @@
             android:layout_height="@dimen/_24sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/averia_serif_libre_regular"
             android:includeFontPadding="false"
             android:text="@string/image"
-            android:fontFamily="@font/averia_serif_libre_regular"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"/>
+            android:textSize="@dimen/_13sdp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/addLinkLayout"
+        android:id="@+id/btnAddUrlNote"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_10sdp"
@@ -219,27 +242,27 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:gravity="center_vertical"
         tools:ignore="UseCompoundDrawables">
-        
+
         <ImageView
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_link"
-            app:tint="@color/white"/>
-        
+            app:tint="@color/white" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/averia_serif_libre_regular"
             android:includeFontPadding="false"
             android:text="@string/link"
-            android:fontFamily="@font/averia_serif_libre_regular"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"/>
+            android:textSize="@dimen/_13sdp" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/deleteNote"
+        android:id="@+id/btnDeleteNote"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_10sdp"
@@ -254,7 +277,7 @@
             android:layout_height="@dimen/_24sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_delete"
-            app:tint="@color/white"/>
+            app:tint="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
@@ -263,6 +286,6 @@
             android:includeFontPadding="false"
             android:text="@string/delete_note"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"/>
+            android:textSize="@dimen/_13sdp" />
     </LinearLayout>
 </LinearLayout>

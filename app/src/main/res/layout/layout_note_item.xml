@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/noteLayout"
+    android:id="@+id/layoutNoteItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/_12sdp"
@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/image"
+        android:id="@+id/vwImageItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -19,7 +19,7 @@
         app:riv_corner_radius_top_right="@dimen/_10sdp" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/vwTitleItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
@@ -28,11 +28,10 @@
         android:fontFamily="@font/averia_serif_libre_bold"
         android:includeFontPadding="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/_13sdp"
-        android:textStyle="bold" />
+        android:textSize="@dimen/_13sdp" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/vwDateTimeItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
@@ -41,6 +40,5 @@
         android:fontFamily="@font/averia_serif_libre_italic"
         android:includeFontPadding="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/_7sdp"
-        android:textStyle="italic" />
+        android:textSize="@dimen/_8sdp" />
 </LinearLayout>

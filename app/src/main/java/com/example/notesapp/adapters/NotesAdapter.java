@@ -26,11 +26,10 @@ import java.util.TimerTask;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {
     private List<Note> notes;
+    private List<Note> notesSource;
     private NotesListener notesListener;
     private Timer timer;
-    private List<Note> notesSource;
-
-    public NotesAdapter(List<Note> notes, NotesListener notesListener) {
+    public NotesAdapter(List<Note> notes, NotesListener notesListener){
         this.notes = notes;
         this.notesListener = notesListener;
         notesSource = notes;
@@ -40,14 +39,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
     @Override
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new NoteViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_note_item, parent, false)
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_note_item, parent, false)
         );
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         holder.setNote(notes.get(position));
-        holder.notelayout.setOnClickListener(view -> {
+        holder.layoutNoteItem.setOnClickListener(view -> {
             notesListener.onNoteClicked(notes.get(position), position);
         });
     }
@@ -62,51 +61,51 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
         return position;
     }
 
-    // Creating view holder for NotesAdapter
+    // Tao view holder cho NotesAdapter
     static class NoteViewHolder extends RecyclerView.ViewHolder {
-        TextView title, date;
-        LinearLayout notelayout;
-        RoundedImageView image;
+        TextView vwTitleItem, vwDateTimeItem;
+        LinearLayout layoutNoteItem;
+        RoundedImageView vwImageItem;
 
         NoteViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            date = itemView.findViewById(R.id.date);
-            notelayout = itemView.findViewById(R.id.noteLayout);
-            image = itemView.findViewById(R.id.image);
+            vwTitleItem = itemView.findViewById(R.id.vwTitleItem);
+            vwDateTimeItem = itemView.findViewById(R.id.vwDateTimeItem);
+            layoutNoteItem = itemView.findViewById(R.id.layoutNoteItem);
+            vwImageItem = itemView.findViewById(R.id.vwImageItem);
         }
 
         void setNote(Note note) {
-            title.setText(note.getNoteTitle());
-            date.setText(note.getNoteDate());
-            GradientDrawable gradientDrawable = (GradientDrawable) notelayout.getBackground();
+            vwTitleItem.setText(note.getNoteTitle());
+            vwDateTimeItem.setText(note.getNoteDate());
+            GradientDrawable gradientDrawable = (GradientDrawable) layoutNoteItem.getBackground();
             if (note.getColor() != null) {
                 gradientDrawable.setColor(Color.parseColor(note.getColor()));
             } else {
-                gradientDrawable.setColor(Color.parseColor("#FFFC8EAC"));
+                gradientDrawable.setColor(Color.parseColor("#FFC8EAC"));
             }
 
             if (note.getImagePath() != null) {
-                image.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
-                image.setVisibility(View.VISIBLE);
+                vwImageItem.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
+                vwImageItem.setVisibility(View.VISIBLE);
             } else {
-                image.setVisibility(View.GONE);
+                vwImageItem.setVisibility(View.GONE);
             }
         }
     }
 
-    public void searchNotes(final String searchKeyword) {
+    public void searchNotes(final String searchKeyword){
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (searchKeyword.trim().isEmpty()) {
+                if (searchKeyword.trim().isEmpty()){
                     notes = notesSource;
                 } else {
                     ArrayList<Note> temp = new ArrayList<>();
-                    for (Note note : notesSource) {
+                    for (Note note : notesSource){
                         if (note.getNoteTitle().toLowerCase().contains(searchKeyword.toLowerCase())
-                                || note.getNoteContent().toLowerCase().contains(searchKeyword.toLowerCase())) {
+                        || note.getNoteContent().toLowerCase().contains(searchKeyword.toLowerCase())){
                             temp.add(note);
                         }
                     }
@@ -122,8 +121,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
         }, 500);
     }
 
-    public void cancelTimer() {
-        if (timer != null) {
+    public void cancelTimer(){
+        if (timer != null){
             timer.cancel();
         }
     }

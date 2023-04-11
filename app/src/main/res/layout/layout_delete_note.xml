@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/deleteLayout"
+    android:id="@+id/layoutDeleteNote"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -9,7 +9,7 @@
     android:background="@drawable/bg_note">
 
     <ImageView
-        android:id="@+id/imgClose"
+        android:id="@+id/btnClose"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_marginTop="@dimen/_10sdp"
@@ -21,7 +21,7 @@
         app:tint="@color/white" />
 
     <ImageView
-        android:id="@+id/imgDeleteNote"
+        android:id="@+id/iconDelete"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_marginStart="@dimen/_8sdp"
@@ -29,7 +29,7 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_delete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgClose"
+        app:layout_constraintTop_toBottomOf="@id/btnClose"
         app:tint="@color/white" />
 
     <TextView
@@ -42,13 +42,14 @@
         android:text="@string/delete_note"
         android:textColor="@color/white"
         android:textSize="@dimen/_14sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgDeleteNote"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iconDelete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgDeleteNote"
-        app:layout_constraintTop_toTopOf="@id/imgDeleteNote" />
+        app:layout_constraintStart_toEndOf="@id/iconDelete"
+        app:layout_constraintTop_toTopOf="@id/iconDelete" />
 
     <TextView
-        android:id="@+id/deleteMessage"
+        android:id="@+id/vwDeleteMessage"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginStart="@dimen/_8sdp"
@@ -63,10 +64,10 @@
         android:text="@string/delete_message"
         android:textColor="@color/white"
         android:textSize="@dimen/_13sdp"
-        app:layout_constraintTop_toBottomOf="@id/imgDeleteNote" />
+        app:layout_constraintTop_toBottomOf="@id/iconDelete" />
 
     <TextView
-        android:id="@+id/yesConfirm"
+        android:id="@+id/btnConfirmYes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_8sdp"
@@ -79,10 +80,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteMessage" />
+        app:layout_constraintTop_toBottomOf="@id/vwDeleteMessage" />
 
     <TextView
-        android:id="@+id/noConfirm"
+        android:id="@+id/btnConfirmNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_8sdp"
@@ -95,7 +96,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/yesConfirm"
-        app:layout_constraintTop_toBottomOf="@id/deleteMessage" />
+        app:layout_constraintEnd_toStartOf="@id/btnConfirmYes"
+        app:layout_constraintTop_toBottomOf="@id/vwDeleteMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
     tools:context=".activities.CreateNoteActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/_40sdp"
@@ -18,11 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            app:layout_constraintBottom_toBottomOf="@+id/txtTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle">
+            app:layout_constraintBottom_toBottomOf="@+id/inputTitle"
+            app:layout_constraintTop_toBottomOf="@+id/inputTitle">
 
             <ImageView
-                android:id="@+id/imgBack"
+                android:id="@+id/btnBack"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginStart="@dimen/_6sdp"
@@ -35,20 +35,20 @@
                 app:tint="@color/grey_26" />
 
             <ImageView
-                android:id="@+id/imgSave"
+                android:id="@+id/btnSave"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_4sdp"
                 android:src="@drawable/ic_done"
-                app:layout_constraintBottom_toBottomOf="@+id/imgBack"
+                app:layout_constraintBottom_toBottomOf="@+id/btnBack"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imgBack"
+                app:layout_constraintTop_toTopOf="@+id/btnBack"
                 app:tint="@color/grey_26" />
 
             <EditText
-                android:id="@+id/txtTitle"
+                android:id="@+id/inputTitle"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_marginStart="@dimen/_12sdp"
@@ -64,32 +64,32 @@
                 android:textSize="@dimen/_16sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+                app:layout_constraintTop_toBottomOf="@+id/btnBack" />
 
             <TextView
-                android:id="@+id/txtDate"
+                android:id="@+id/vwDateTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/averia_serif_libre_italic"
                 android:includeFontPadding="false"
                 android:textSize="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="@+id/txtTitle"
-                app:layout_constraintStart_toStartOf="@+id/txtTitle"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/inputTitle"
+                app:layout_constraintStart_toStartOf="@+id/inputTitle"
+                app:layout_constraintTop_toBottomOf="@+id/inputTitle" />
 
             <ImageView
-                android:id="@+id/imgPicture"
+                android:id="@+id/vwImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_12sdp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/txtDate" />
+                app:layout_constraintTop_toBottomOf="@id/vwDateTime" />
 
             <ImageView
-                android:id="@+id/imgRemovePicture"
+                android:id="@+id/btnRemoveImage"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:layout_marginTop="@dimen/_10sdp"
@@ -98,12 +98,12 @@
                 android:padding="@dimen/_4sdp"
                 android:src="@drawable/ic_delete"
                 android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="@id/imgPicture"
-                app:layout_constraintTop_toTopOf="@id/imgPicture"
+                app:layout_constraintEnd_toEndOf="@id/vwImage"
+                app:layout_constraintTop_toTopOf="@id/vwImage"
                 app:tint="@color/red" />
 
             <LinearLayout
-                android:id="@+id/URLlayout"
+                android:id="@+id/urlArea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
@@ -112,11 +112,11 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/imgPicture"
+                app:layout_constraintTop_toBottomOf="@id/vwImage"
                 tools:ignore="UseCompoundDrawables">
 
                 <TextView
-                    android:id="@+id/URL"
+                    android:id="@+id/vwUrl"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -126,7 +126,7 @@
                     android:textStyle="italic" />
 
                 <ImageView
-                    android:id="@+id/imgRemoveURL"
+                    android:id="@+id/btnRemoveURL"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:contentDescription="@string/app_name"
@@ -136,7 +136,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/txtContent"
+                android:id="@+id/inputContent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
@@ -155,34 +155,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/URLlayout" />
+                app:layout_constraintTop_toBottomOf="@+id/urlArea" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <include layout="@layout/layout_menu" />
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/menuLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/bg_menu"-->
-    <!--        android:layout_gravity="bottom"-->
-    <!--        android:paddingTop="@dimen/_15sdp"-->
-    <!--        android:paddingBottom="@dimen/_15sdp">-->
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imgExtensions"-->
-    <!--            android:layout_width="@dimen/_23sdp"-->
-    <!--            android:layout_height="@dimen/_23sdp"-->
-    <!--            android:layout_marginStart="@dimen/_6sdp"-->
-    <!--            android:src="@drawable/ic_add_box"-->
-    <!--            app:tint="@color/white" />-->
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/imgColor"-->
-    <!--            android:layout_width="@dimen/_23sdp"-->
-    <!--            android:layout_height="@dimen/_23sdp"-->
-    <!--            android:layout_marginStart="@dimen/_15sdp"-->
-    <!--            android:src="@drawable/ic_color_lens"-->
-    <!--            app:tint="@color/white" />-->
-    <!--    </LinearLayout>-->
+    <include layout="@layout/layout_note_menu" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
