@@ -55,13 +55,13 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:background="@null"
+                android:fontFamily="@font/averia_serif_libre_bold"
                 android:hint="@string/title"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
                 android:textSize="@dimen/_16sdp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgBack" />
@@ -71,9 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/averia_serif_libre_italic"
                 android:includeFontPadding="false"
                 android:textSize="@dimen/_10sdp"
-                android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="@+id/txtTitle"
                 app:layout_constraintStart_toStartOf="@+id/txtTitle"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
@@ -86,7 +86,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/txtDate"/>
+                app:layout_constraintTop_toBottomOf="@id/txtDate" />
 
             <ImageView
                 android:id="@+id/imgRemovePicture"
@@ -98,9 +98,9 @@
                 android:padding="@dimen/_4sdp"
                 android:src="@drawable/ic_delete"
                 android:visibility="gone"
-                app:tint="@color/red"
+                app:layout_constraintEnd_toEndOf="@id/imgPicture"
                 app:layout_constraintTop_toTopOf="@id/imgPicture"
-                app:layout_constraintEnd_toEndOf="@id/imgPicture"/>
+                app:tint="@color/red" />
 
             <LinearLayout
                 android:id="@+id/URLlayout"
@@ -121,17 +121,17 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:autoLink="web"
-                    android:textStyle="italic"
                     android:includeFontPadding="false"
-                    android:textSize="@dimen/_13sdp"/>
-                
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="italic" />
+
                 <ImageView
                     android:id="@+id/imgRemoveURL"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/ic_cancel"
-                    app:tint="@color/red"/>
+                    app:tint="@color/red" />
 
             </LinearLayout>
 
@@ -140,10 +140,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:background="@null"
+                android:fontFamily="@font/averia_serif_libre_regular"
                 android:gravity="top"
                 android:hint="@string/content"
                 android:importantForAutofill="no"
@@ -151,7 +152,6 @@
                 android:inputType="textMultiLine"
                 android:minHeight="@dimen/_70sdp"
                 android:textSize="@dimen/_13sdp"
-                android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

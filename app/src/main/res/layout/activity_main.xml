@@ -33,6 +33,7 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
+            android:fontFamily="@font/averia_serif_libre_regular"
             android:hint="@string/search_bar"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"

@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             filePath = contentUri.getPath();
         } else {
             cursor.moveToFirst();
-            int index = cursor.getColumnIndex("data");
+            int index = cursor.getColumnIndex("_data");
             filePath = cursor.getString(index);
             cursor.close();
         }
@@ -189,7 +189,9 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
                     if (isNoteDelete){
                         notesAdapter.notifyItemRemoved(noteClickedPosition);
                     }else {
-                        noteList.add(noteClickedPosition, notes.get(noteClickedPosition));
+                        if(notes != null && notes.size() != 0){
+                            noteList.add(noteClickedPosition, notes.get(noteClickedPosition));
+                        }
                         notesAdapter.notifyItemChanged(noteClickedPosition);
                     }
                 }

@@ -29,7 +29,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
     private NotesListener notesListener;
     private Timer timer;
     private List<Note> notesSource;
-    public NotesAdapter(List<Note> notes, NotesListener notesListener){
+
+    public NotesAdapter(List<Note> notes, NotesListener notesListener) {
         this.notes = notes;
         this.notesListener = notesListener;
         notesSource = notes;
@@ -82,7 +83,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             if (note.getColor() != null) {
                 gradientDrawable.setColor(Color.parseColor(note.getColor()));
             } else {
-                gradientDrawable.setColor(Color.parseColor("#FF000000"));
+                gradientDrawable.setColor(Color.parseColor("#FFFC8EAC"));
             }
 
             if (note.getImagePath() != null) {
@@ -94,18 +95,18 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
         }
     }
 
-    public void searchNotes(final String searchKeyword){
+    public void searchNotes(final String searchKeyword) {
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (searchKeyword.trim().isEmpty()){
+                if (searchKeyword.trim().isEmpty()) {
                     notes = notesSource;
                 } else {
                     ArrayList<Note> temp = new ArrayList<>();
-                    for (Note note : notesSource){
+                    for (Note note : notesSource) {
                         if (note.getNoteTitle().toLowerCase().contains(searchKeyword.toLowerCase())
-                        || note.getNoteContent().toLowerCase().contains(searchKeyword.toLowerCase())){
+                                || note.getNoteContent().toLowerCase().contains(searchKeyword.toLowerCase())) {
                             temp.add(note);
                         }
                     }
@@ -121,8 +122,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
         }, 500);
     }
 
-    public void cancelTimer(){
-        if (timer != null){
+    public void cancelTimer() {
+        if (timer != null) {
             timer.cancel();
         }
     }

@@ -39,6 +39,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class CreateNoteActivity extends AppCompatActivity {
+    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
+    private static final int REQUEST_CODE_SELECTED_IMAGE = 2;
     private EditText inputTitle, inputContent;
     private TextView dateTime;
     private ImageView imgPicture;
@@ -46,8 +48,6 @@ public class CreateNoteActivity extends AppCompatActivity {
     private LinearLayout URLlayout;
     private String selectedNoteColor;
     private String selectedImagePath;
-    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
-    private static final int REQUEST_CODE_SELECTED_IMAGE = 2;
     private AlertDialog dialogAddURL;
     private AlertDialog dialogDeleteNote;
     private Note alreadyAvailabelNote;
@@ -75,7 +75,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         ImageView imgSave = findViewById(R.id.imgSave);
         imgSave.setOnClickListener(view -> saveNote());
 
-        selectedNoteColor = "#FF424242";
+        selectedNoteColor = "#FFFC8EAC";
         selectedImagePath = "";
         if (getIntent().getBooleanExtra("isViewOrUpdate", false)) {
             alreadyAvailabelNote = (Note) getIntent().getSerializableExtra("note");
@@ -91,10 +91,10 @@ public class CreateNoteActivity extends AppCompatActivity {
             URL.setText(null);
             URLlayout.setVisibility(View.GONE);
         });
-        if (getIntent().getBooleanExtra("isFromQuickAction", false)){
+        if (getIntent().getBooleanExtra("isFromQuickAction", false)) {
             String type = getIntent().getStringExtra("quickActionType");
-            if (type != null){
-                if (type.equals("image")){
+            if (type != null) {
+                if (type.equals("image")) {
                     selectedImagePath = getIntent().getStringExtra("imagePath");
                     imgPicture.setImageBitmap(BitmapFactory.decodeFile(selectedImagePath));
                     imgPicture.setVisibility(View.VISIBLE);
@@ -186,7 +186,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         final ImageView imgColor6 = menuLayout.findViewById(R.id.imgColor6);
 
         menuLayout.findViewById(R.id.vwColor0).setOnClickListener(view -> {
-            selectedNoteColor = "#FF424242";
+            selectedNoteColor = "#FFFC8EAC";
             imgColor0.setImageResource(R.drawable.ic_done);
             imgColor1.setImageResource(0);
             imgColor2.setImageResource(0);
@@ -197,7 +197,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
         menuLayout.findViewById(R.id.vwColor1).setOnClickListener(view -> {
-            selectedNoteColor = "#264D3B";
+            selectedNoteColor = "#FFA500";
             imgColor0.setImageResource(0);
             imgColor1.setImageResource(R.drawable.ic_done);
             imgColor2.setImageResource(0);
@@ -208,7 +208,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
         menuLayout.findViewById(R.id.vwColor2).setOnClickListener(view -> {
-            selectedNoteColor = "#0C635D";
+            selectedNoteColor = "#00CC66";
             imgColor0.setImageResource(0);
             imgColor1.setImageResource(0);
             imgColor2.setImageResource(R.drawable.ic_done);
@@ -230,7 +230,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
         menuLayout.findViewById(R.id.vwColor4).setOnClickListener(view -> {
-            selectedNoteColor = "#274255";
+            selectedNoteColor = "#0066CC";
             imgColor0.setImageResource(0);
             imgColor1.setImageResource(0);
             imgColor2.setImageResource(0);
@@ -241,7 +241,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         });
 
         menuLayout.findViewById(R.id.vwColor5).setOnClickListener(view -> {
-            selectedNoteColor = "#4B443A";
+            selectedNoteColor = "#993300";
             imgColor0.setImageResource(0);
             imgColor1.setImageResource(0);
             imgColor2.setImageResource(0);
@@ -408,7 +408,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             filePath = contentUri.getPath();
         } else {
             cursor.moveToFirst();
-            int index = cursor.getColumnIndex("data");
+            int index = cursor.getColumnIndex("_data");
             filePath = cursor.getString(index);
             cursor.close();
         }

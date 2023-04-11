@@ -30,18 +30,18 @@
         android:src="@drawable/ic_delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgClose"
-        app:tint="@color/red" />
+        app:tint="@color/white" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
+        android:fontFamily="@font/averia_serif_libre_bold"
         android:includeFontPadding="false"
         android:text="@string/delete_note"
         android:textColor="@color/white"
         android:textSize="@dimen/_14sdp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgDeleteNote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imgDeleteNote"
@@ -55,11 +55,12 @@
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:background="@null"
+        android:fontFamily="@font/averia_serif_libre_regular"
         android:gravity="center_vertical"
-        android:text="@string/delete_message"
         android:includeFontPadding="false"
         android:paddingStart="@dimen/_8sdp"
         android:paddingEnd="@dimen/_8sdp"
+        android:text="@string/delete_message"
         android:textColor="@color/white"
         android:textSize="@dimen/_13sdp"
         app:layout_constraintTop_toBottomOf="@id/imgDeleteNote" />
@@ -94,7 +95,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteMessage"
-        app:layout_constraintEnd_toStartOf="@id/yesConfirm"/>
+        app:layout_constraintEnd_toStartOf="@id/yesConfirm"
+        app:layout_constraintTop_toBottomOf="@id/deleteMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
